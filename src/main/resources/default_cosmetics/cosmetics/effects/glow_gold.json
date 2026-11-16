@@ -1,0 +1,15 @@
+{
+  "id": "glow_gold",
+  "type": "EFFECT",
+  "display_name": "<gold><b>Gold Glow</b></gold>",
+  "description": [
+    "<gray>A gold glowing outline.</gray>",
+    "<dark_gray>Ships as a reference example.</dark_gray>"
+  ],
+  "model": "dex_cosmetics:item/glow_gold",
+  "texture": "dex_cosmetics:item/glow_gold",
+  "effect": {
+    "kind": "glow",
+    "glow": { "color": "gold" }
+  }
+}

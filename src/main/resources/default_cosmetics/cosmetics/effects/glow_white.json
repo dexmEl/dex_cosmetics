@@ -1,0 +1,15 @@
+{
+  "id": "glow_white",
+  "type": "EFFECT",
+  "display_name": "<white><b>White Glow</b></white>",
+  "description": [
+    "<gray>A white glowing outline.</gray>",
+    "<dark_gray>Ships as a reference example.</dark_gray>"
+  ],
+  "model": "dex_cosmetics:item/glow_white",
+  "texture": "dex_cosmetics:item/glow_white",
+  "effect": {
+    "kind": "glow",
+    "glow": { "color": "white" }
+  }
+}

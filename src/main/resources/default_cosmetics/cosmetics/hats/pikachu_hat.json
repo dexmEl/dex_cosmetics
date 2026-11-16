@@ -1,0 +1,19 @@
+{
+  "id": "pikachu_hat",
+  "type": "HAT",
+  "display_name": "<b><gradient:#F1FF00:#FF7400>Pikachu Hat</gradient></b>",
+  "description": [
+    "A Pikachu hat.",
+    "Ships as a reference example."
+  ],
+  "model": "dex_cosmetics:hats/pikachu_hat",
+  "texture": "dex_cosmetics:hats/pikachu_hat",
+  "transform": {
+    "offset_x": 0.0,
+    "offset_y": 0.0,
+    "offset_z": 0.0,
+    "scale_x": 1.0,
+    "scale_y": 1.0,
+    "scale_z": 1.0
+  }
+}

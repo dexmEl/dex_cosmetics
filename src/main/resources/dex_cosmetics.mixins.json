@@ -1,0 +1,15 @@
+{
+	"required": true,
+	"package": "dex.cosmetics.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"plugin": "",
+	"mixins": [
+		"ItemEntityMixin",
+		"ServerPlayNetworkHandlerMixin"
+	],
+	"client": [],
+	"server": [],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

@@ -1,0 +1,15 @@
+{
+  "id": "glow_red",
+  "type": "EFFECT",
+  "display_name": "<red><b>Red Glow</b></red>",
+  "description": [
+    "<gray>A red glowing outline.</gray>",
+    "<dark_gray>Ships as a reference example.</dark_gray>"
+  ],
+  "model": "dex_cosmetics:item/glow_red",
+  "texture": "dex_cosmetics:item/glow_red",
+  "effect": {
+    "kind": "glow",
+    "glow": { "color": "red" }
+  }
+}

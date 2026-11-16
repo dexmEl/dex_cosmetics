@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "dex_cosmetics",
+  "version": "${version}",
+  "name": "Dex Cosmetics",
+  "description": "Server-side cosmetics mod: hats, backpacks/wings, item skins, effects. Powered by Polymer; config-driven; one cosmetic of each type ships bundled as a reference.",
+  "authors": [
+    "Dex"
+  ],
+  "contact": {
+    "sources": "https://github.com/dexmEl/dex_cosmetics"
+  },
+  "license": "CC0-1.0",
+  "icon": "assets/dex_cosmetics/icon.png",
+  "environment": "server",
+  "entrypoints": {
+    "main": [
+      {
+        "value": "dex.cosmetics.DexCosmetics",
+        "adapter": "kotlin"
+      }
+    ]
+  },
+  "mixins": [
+    "dex_cosmetics.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.19.2",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*",
+    "fabric-language-kotlin": "*",
+    "polymer-core": ">=0.9.19",
+    "polymer-resource-pack": ">=0.9.19",
+    "polymer-virtual-entity": ">=0.9.19",
+    "polymer-autohost": ">=0.9.19",
+    "sgui": "*",
+    "placeholder-api": "*"
+  },
+  "suggests": {
+    "luckperms": "*",
+    "cobblemon": "*"
+  },
+  "custom": {
+    "polymer:resource_pack_include": true,
+    "polymer:resource_pack_require": true
+  }
+}

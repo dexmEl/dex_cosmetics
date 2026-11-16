@@ -1,0 +1,15 @@
+{
+  "id": "glow_green",
+  "type": "EFFECT",
+  "display_name": "<green><b>Green Glow</b></green>",
+  "description": [
+    "<gray>A green glowing outline.</gray>",
+    "<dark_gray>Ships as a reference example.</dark_gray>"
+  ],
+  "model": "dex_cosmetics:item/glow_green",
+  "texture": "dex_cosmetics:item/glow_green",
+  "effect": {
+    "kind": "glow",
+    "glow": { "color": "green" }
+  }
+}

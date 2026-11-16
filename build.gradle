@@ -1,0 +1,175 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
+plugins {
+    id 'net.fabricmc.fabric-loom-remap' version "${loom_version}"
+    id 'maven-publish'
+    id 'com.diffplug.spotless' version '8.0.0'
+    id "org.jetbrains.kotlin.jvm" version "2.3.21"
+}
+
+version = project.mod_version
+group = project.maven_group
+
+repositories {
+    maven { url "https://maven.nucleoid.xyz" }       // Polymer, sgui
+    maven { url "https://maven.terraformersmc.com" } // Optional transitive dependencies
+    maven { url "https://repo.spongepowered.org/maven" }
+    maven {
+        name = "ImpactDev (Cobblemon)"
+        url = "https://maven.impactdev.net/repository/development/"
+    }
+    maven {
+        url "https://maven.parchmentmc.org"
+        content { excludeGroup "org.parchmentmc.feather" }
+    }
+    maven {
+        url "https://oss.sonatype.org/content/repositories/snapshots/"
+        content { includeGroup "net.luckperms" }
+    }
+}
+
+loom {
+    mods {
+        "dex_cosmetics" {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+    modImplementation "net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}"
+
+    // Polymer — server-side custom items, models, and virtual entities
+    modImplementation "eu.pb4:polymer-core:${project.polymer_version}"
+    modImplementation "eu.pb4:polymer-resource-pack:${project.polymer_version}"
+    modImplementation "eu.pb4:polymer-virtual-entity:${project.polymer_version}"
+    // polymer-autohost — runs an HTTP server that serves resource_pack.zip to clients on
+    // join. Without this module the pack is built on disk but never delivered, so the
+    // client falls back to vanilla rendering (TRANSPARENT renders as visible paper, GUI
+    // title-glyph backgrounds don't show, cosmetic CMD overrides aren't applied).
+    modImplementation "eu.pb4:polymer-autohost:${project.polymer_version}"
+
+    // sgui — server-side inventory GUIs. Not published on Modrinth, so JAR-in-JAR bundle it
+    // (Fabric's `include`) so end users only need to install Polymer + Fabric API.
+    modImplementation include("eu.pb4:sgui:${project.sgui_version}")
+
+    // placeholder-api — MiniMessage-style text parsing into Minecraft Text components
+    modImplementation "eu.pb4:placeholder-api:${project.placeholder_api_version}"
+
+    // LuckPerms — optional, gated at runtime via reflection-friendly entry
+    modCompileOnly "net.luckperms:api:${project.luckperms_api_version}"
+
+    // Cobblemon — only its Bedrock-particle dispatch packet
+    // (SpawnSnowstormParticlePacket). Optional at runtime: SnowstormDispatcher
+    // gates on FabricLoader.isModLoaded("cobblemon") before touching the class.
+    // `modCompileOnly` keeps Cobblemon out of the production hard-dep list so
+    // admins can choose whether to install it. `-PwithCobblemon=true` adds it to the development runtime for Snowstorm testing.
+    // Exclude transitive fabric-api so Cobblemon's newer 1.21.4+ pin doesn't
+    // upgrade ours to keep the Minecraft target stable.
+    modCompileOnly("com.cobblemon:fabric:${project.cobblemon_version}") {
+        exclude group: "net.fabricmc.fabric-api"
+    }
+    if (providers.gradleProperty('withCobblemon').getOrElse('false').toBoolean()) {
+        modRuntimeOnly("com.cobblemon:fabric:${project.cobblemon_version}") {
+            exclude group: "net.fabricmc.fabric-api"
+        }
+    }
+
+    testImplementation "net.fabricmc:fabric-loader-junit:${project.loader_version}"
+    testImplementation "org.junit.jupiter:junit-jupiter:5.11.4"
+    testRuntimeOnly "org.junit.platform:junit-platform-launcher:1.11.4"
+
+    // SQLite (JDBC) + HikariCP for connection pooling — included in the jar
+    include implementation("org.xerial:sqlite-jdbc:${project.sqlite_jdbc_version}")
+    include implementation("com.zaxxer:HikariCP:${project.hikari_version}")
+}
+
+def bundledAssetIndex = layout.buildDirectory.file('generated/default-assets/index.txt')
+tasks.register('generateBundledAssetIndex') {
+    def assets = fileTree('src/main/resources/default_cosmetics')
+    inputs.files(assets)
+    outputs.file(bundledAssetIndex)
+    doLast {
+        def target = bundledAssetIndex.get().asFile
+        target.parentFile.mkdirs()
+        target.setText(assets.files.collect {
+            file('src/main/resources/default_cosmetics').toPath().relativize(it.toPath()).toString().replace('\\', '/')
+        }.sort().join('\n') + '\n', 'UTF-8')
+    }
+}
+
+processResources {
+    dependsOn tasks.named('generateBundledAssetIndex')
+    from(bundledAssetIndex) { into 'default_cosmetics' }
+    def version = project.version
+    inputs.property "version", version
+
+    filesMatching("fabric.mod.json") {
+        expand "version": version
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 21
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget = JvmTarget.JVM_21
+    }
+}
+
+java {
+    withSourcesJar()
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+jar {
+    def projectName = project.name
+    inputs.property "projectName", projectName
+
+    from("LICENSE") {
+        rename { "${it}_$projectName"}
+    }
+}
+
+publishing {
+    publications {
+        create("mavenJava", MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+    }
+}
+
+
+test {
+    useJUnitPlatform()
+    systemProperty 'fabric.side', 'server'
+    systemProperty 'dex.cosmetics.projectDir', projectDir.absolutePath
+    workingDir layout.buildDirectory.dir('test-run').get().asFile
+    doFirst { workingDir.mkdirs() }
+    maxHeapSize = '1G'
+}
+
+spotless {
+    kotlin {
+        target 'src/**/*.kt'
+        ktfmt('0.54').kotlinlangStyle()
+    }
+    java {
+        target 'src/**/*.java'
+        googleJavaFormat('1.25.2')
+    }
+    format('misc') {
+        target '*.md', '.editorconfig', '.gitignore', '.gitattributes', '.github/**/*.yml', 'gradle.properties'
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
+}

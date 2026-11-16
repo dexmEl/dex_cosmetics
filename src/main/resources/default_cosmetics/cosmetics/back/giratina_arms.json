@@ -1,0 +1,16 @@
+{
+  "id": "giratina_arms",
+  "type": "BACK",
+  "display_name": "<b><gradient:#D40000:#3E0000>Giratina Arms</gradient></b>",
+  "description": [
+    "Giratina origin form arms.",
+    "Ships as a reference example."
+  ],
+  "model": "dex_cosmetics:back/giratina_arms",
+  "texture": "dex_cosmetics:back/giratina_arms",
+  "transform": {
+    "scale_x": 1.0,
+    "scale_y": 1.0,
+    "scale_z": 1.0
+  }
+}

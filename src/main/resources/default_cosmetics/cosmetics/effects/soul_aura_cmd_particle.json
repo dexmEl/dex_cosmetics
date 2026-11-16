@@ -1,0 +1,24 @@
+{
+  "id": "soul_aura_cmd_particle",
+  "type": "EFFECT",
+  "display_name": "<b><gradient:#6BCBFF:#9B5DFF>Soul Aura</gradient></b>",
+  "description": [
+    "<gray>A roiling soul-flame aura at your feet,</gray>",
+    "<gray>topped with rising soul wisps and electric sparks.</gray>",
+    "<dark_gray>Command-mode example: stacks three vanilla</dark_gray>",
+    "<dark_gray>particle types per emit to make one composite look.</dark_gray>"
+  ],
+  "model": "dex_cosmetics:effects/soul_aura",
+  "texture": "dex_cosmetics:effects/soul_aura/gui/soul_aura",
+  "effect": {
+    "kind": "particle",
+    "particle": {
+      "interval_ticks": 2,
+      "commands": [
+        "particle soul_fire_flame ~ ~0.1 ~ 0.4 0.05 0.4 0.05 6",
+        "particle soul ~ ~0.8 ~ 0.25 0.5 0.25 0.02 3",
+        "particle electric_spark ~ ~0.4 ~ 0.5 0.05 0.5 0.1 2"
+      ]
+    }
+  }
+}

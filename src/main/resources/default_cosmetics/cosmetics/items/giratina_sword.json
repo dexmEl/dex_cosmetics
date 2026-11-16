@@ -1,0 +1,16 @@
+{
+  "id": "giratina_sword",
+  "type": "ITEM",
+  "display_name": "<b><gradient:#FF0000:#160000>Giratin</gradient><gradient:#160000:#5A0000>a Sword</gradient></b>",
+  "description": [
+    "Reskins any sword as a Giratina blade.",
+    "Ships as a reference example."
+  ],
+  "model": "dex_cosmetics:items/giratina_sword",
+  "texture": "dex_cosmetics:items/giratina_sword",
+  "item_skin": {
+    "compatible_items": [
+      "#minecraft:swords"
+    ]
+  }
+}

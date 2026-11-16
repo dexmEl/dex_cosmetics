@@ -1,0 +1,15 @@
+{
+  "id": "glow_dark_blue",
+  "type": "EFFECT",
+  "display_name": "<dark_blue><b>Dark Blue Glow</b></dark_blue>",
+  "description": [
+    "<gray>A dark blue glowing outline.</gray>",
+    "<dark_gray>Ships as a reference example.</dark_gray>"
+  ],
+  "model": "dex_cosmetics:item/glow_dark_blue",
+  "texture": "dex_cosmetics:item/glow_dark_blue",
+  "effect": {
+    "kind": "glow",
+    "glow": { "color": "dark_blue" }
+  }
+}

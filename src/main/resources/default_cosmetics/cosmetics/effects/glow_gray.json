@@ -1,0 +1,15 @@
+{
+  "id": "glow_gray",
+  "type": "EFFECT",
+  "display_name": "<gray><b>Gray Glow</b></gray>",
+  "description": [
+    "<gray>A gray glowing outline.</gray>",
+    "<dark_gray>Ships as a reference example.</dark_gray>"
+  ],
+  "model": "dex_cosmetics:item/glow_gray",
+  "texture": "dex_cosmetics:item/glow_gray",
+  "effect": {
+    "kind": "glow",
+    "glow": { "color": "gray" }
+  }
+}

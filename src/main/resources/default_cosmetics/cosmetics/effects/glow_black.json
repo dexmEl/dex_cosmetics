@@ -1,0 +1,15 @@
+{
+  "id": "glow_black",
+  "type": "EFFECT",
+  "display_name": "<black><b>Black Glow</b></black>",
+  "description": [
+    "<gray>A black glowing outline.</gray>",
+    "<dark_gray>Ships as a reference example.</dark_gray>"
+  ],
+  "model": "dex_cosmetics:item/glow_black",
+  "texture": "dex_cosmetics:item/glow_black",
+  "effect": {
+    "kind": "glow",
+    "glow": { "color": "black" }
+  }
+}

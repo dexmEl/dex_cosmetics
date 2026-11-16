@@ -1,0 +1,267 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "dex_cosmetics:gui/balloons/balloons.png",
+      "ascent": 13,
+      "height": 256,
+      "x_offset": -8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "dex_cosmetics:gui/balloons/balloons_right_arrow.png",
+      "ascent": 13,
+      "height": 256,
+      "x_offset": -8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "dex_cosmetics:gui/balloons/balloons_both_arrows.png",
+      "ascent": 13,
+      "height": 256,
+      "x_offset": -8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "dex_cosmetics:gui/balloons/balloons_left_arrow.png",
+      "ascent": 13,
+      "height": 256,
+      "x_offset": -8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "dex_cosmetics:gui/pokemon/pokemon.png",
+      "ascent": 13,
+      "height": 256,
+      "x_offset": -8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "dex_cosmetics:gui/pokemon/pokemon_right_arrow.png",
+      "ascent": 13,
+      "height": 256,
+      "x_offset": -8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "dex_cosmetics:gui/pokemon/pokemon_both_arrows.png",
+      "ascent": 13,
+      "height": 256,
+      "x_offset": -8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "dex_cosmetics:gui/pokemon/pokemon_left_arrow.png",
+      "ascent": 13,
+      "height": 256,
+      "x_offset": -8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "dex_cosmetics:gui/hats/hats.png",
+      "ascent": 13,
+      "height": 256,
+      "x_offset": -8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "dex_cosmetics:gui/hats/hats_right_arrow.png",
+      "ascent": 13,
+      "height": 256,
+      "x_offset": -8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "dex_cosmetics:gui/hats/hats_both_arrows.png",
+      "ascent": 13,
+      "height": 256,
+      "x_offset": -8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "dex_cosmetics:gui/hats/hats_left_arrow.png",
+      "ascent": 13,
+      "height": 256,
+      "x_offset": -8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "dex_cosmetics:gui/back/back.png",
+      "ascent": 13,
+      "height": 256,
+      "x_offset": -8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "dex_cosmetics:gui/back/back_right_arrow.png",
+      "ascent": 13,
+      "height": 256,
+      "x_offset": -8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "dex_cosmetics:gui/back/back_both_arrows.png",
+      "ascent": 13,
+      "height": 256,
+      "x_offset": -8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "dex_cosmetics:gui/back/back_left_arrow.png",
+      "ascent": 13,
+      "height": 256,
+      "x_offset": -8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "dex_cosmetics:gui/effects/effects.png",
+      "ascent": 13,
+      "height": 256,
+      "x_offset": -8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "dex_cosmetics:gui/effects/effects_right_arrow.png",
+      "ascent": 13,
+      "height": 256,
+      "x_offset": -8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "dex_cosmetics:gui/effects/effects_both_arrows.png",
+      "ascent": 13,
+      "height": 256,
+      "x_offset": -8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "dex_cosmetics:gui/effects/effects_left_arrow.png",
+      "ascent": 13,
+      "height": 256,
+      "x_offset": -8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "dex_cosmetics:gui/items/items.png",
+      "ascent": 13,
+      "height": 256,
+      "x_offset": -8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "dex_cosmetics:gui/items/items_right_arrow.png",
+      "ascent": 13,
+      "height": 256,
+      "x_offset": -8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "dex_cosmetics:gui/items/items_both_arrows.png",
+      "ascent": 13,
+      "height": 256,
+      "x_offset": -8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "dex_cosmetics:gui/items/items_left_arrow.png",
+      "ascent": 13,
+      "height": 256,
+      "x_offset": -8,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "space",
+      "advances": {
+        "": -1,
+        "": -2,
+        "": -4,
+        "": -8,
+        "": -16,
+        "": -32,
+        "": -64,
+        "": -128,
+        "": -256,
+        "": 1,
+        "": 2,
+        "": 4,
+        "": 8,
+        "": 16,
+        "": 32,
+        "": 64,
+        "": 128,
+        "": 256
+      }
+    }
+  ]
+}

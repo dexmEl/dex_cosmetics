@@ -1,0 +1,19 @@
+{
+  "id": "snowstorm_spark",
+  "type": "EFFECT",
+  "display_name": "<b><gradient:#FFF6C3:#FF3636>Spark</gradient></b>",
+  "description": [
+    "<gray>An ember spark trail that follows you.</gray>",
+    "<dark_gray>Ships as a reference example.</dark_gray>"
+  ],
+  "model": "dex_cosmetics:item/snowstorm_spark",
+  "texture": "dex_cosmetics:effects/snowstorm_spark/gui/snowstorm_spark",
+  "effect": {
+    "kind": "snowstorm",
+    "snowstorm": {
+      "particle_id": "dex_cosmetics:snowstorm_spark",
+      "interval_ticks": 4,
+      "broadcast_radius": 32
+    }
+  }
+}

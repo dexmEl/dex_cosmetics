@@ -1,0 +1,15 @@
+{
+  "id": "glow_dark_aqua",
+  "type": "EFFECT",
+  "display_name": "<dark_aqua><b>Dark Aqua Glow</b></dark_aqua>",
+  "description": [
+    "<gray>A dark aqua glowing outline.</gray>",
+    "<dark_gray>Ships as a reference example.</dark_gray>"
+  ],
+  "model": "dex_cosmetics:item/glow_dark_aqua",
+  "texture": "dex_cosmetics:item/glow_dark_aqua",
+  "effect": {
+    "kind": "glow",
+    "glow": { "color": "dark_aqua" }
+  }
+}

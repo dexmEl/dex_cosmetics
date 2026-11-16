@@ -1,0 +1,15 @@
+{
+  "id": "glow_light_purple",
+  "type": "EFFECT",
+  "display_name": "<light_purple><b>Light Purple Glow</b></light_purple>",
+  "description": [
+    "<gray>A light purple glowing outline.</gray>",
+    "<dark_gray>Ships as a reference example.</dark_gray>"
+  ],
+  "model": "dex_cosmetics:item/glow_light_purple",
+  "texture": "dex_cosmetics:item/glow_light_purple",
+  "effect": {
+    "kind": "glow",
+    "glow": { "color": "light_purple" }
+  }
+}
